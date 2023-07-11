@@ -1,12 +1,13 @@
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class ManagerTest {
     private Manager manager;
 
     @BeforeEach
-    public void setup(){
+    public void setup() {
         manager = new Manager();
     }
 
@@ -30,7 +31,7 @@ public class ManagerTest {
 
     @Test
     void findLastWithLimitLessThanMovies() {
-        for(int i=0; i<11; i++){
+        for (int i = 0; i < 11; i++) {
             manager.add(new Movie("Movie" + i));
         }
         Movie[] lastMovies = manager.findLast();
@@ -41,7 +42,7 @@ public class ManagerTest {
     @Test
     void findLastWithLimitMoreThanMovies() {
         Manager customManager = new Manager(15);
-        for(int i=0; i<11; i++){
+        for (int i = 0; i < 11; i++) {
             customManager.add(new Movie("Movie" + i));
         }
         Movie[] lastMovies = customManager.findLast();
