@@ -30,11 +30,13 @@ public class ManagerTest {
         Movie[] expected = new Movie[]{movie1, movie2};
         assertArrayEquals(expected, actual);
     }
+
     @Test
     void findLastWithNoMovies() {
         Movie[] lastMovies = manager.findLast();
         assertEquals(0, lastMovies.length);
     }
+
     @Test
     void findLastWithLimitLessThanMovies() {
         IntStream.rangeClosed(1, 11).mapToObj(i -> new Movie("Movie" + i)).forEach(manager::add);
